@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class aula_27 {
+	
+	public static void main (String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+			int largura, comprimento, metroQuadrado, area;
+			double preco;
+			
+			System.out.println("Digite os valores abaixo: ");
+			
+			// Entrada de dados
+			System.out.print("Largura: ");
+			largura = sc.nextInt();
+			
+			System.out.print("Comprimento: ");
+			comprimento = sc.nextInt();
+			
+			System.out.print("Metro Quadrado: ");
+			metroQuadrado = sc.nextInt();
+			
+			// Processamento de dados
+			area = largura * comprimento;
+			preco = metroQuadrado * area;
+			
+			// Saída de dados
+			System.out.println("RESULTADO");
+			System.out.println("AREA = " + area);
+			System.out.println("PRECO = " + preco);
+			
+		sc.close();
+	}
+	
+}
