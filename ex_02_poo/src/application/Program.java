@@ -24,7 +24,7 @@ public class Program {
 		employee.grossSalary = sc.nextDouble();
 		System.out.print("Tax: ");
 		employee.tax = sc.nextDouble();
-		System.out.println();
+		System.out.println(); 
 		
 		System.out.println(employee.toString());
 		System.out.println();
