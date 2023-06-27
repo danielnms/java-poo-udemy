@@ -6,10 +6,11 @@ public class Product {
 	public double price;
 	public int quantity;
 	
-	// Construtor
+	// Construtor padrao
 	public Product() {
 	}
 	
+	// Construtor customizado
 	public Product(String name, double price, int quantity) {
 		this.name = name;
 		this.price = price;
