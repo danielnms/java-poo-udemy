@@ -9,32 +9,35 @@ public class Program {
 	public static void main(String[] args) {
 		
 		Scanner sc = new Scanner(System.in);
-		Account acc = new Account();
+		Account account;
 		
 		System.out.print("Enter account number: ");
-		acc.setAccountNumber(sc.nextInt());
+		int accNumber = sc.nextInt();
 		System.out.print("Enter account holder: ");
-		acc.setHolder(sc.next());
+		String holder = sc.nextLine();
 		System.out.print("Is there an initial deposit (y/n)? ");
 		char resp = sc.next().charAt(0);
 		
 		if (resp == 'y') {
 			System.out.print("Enter initial deposit value: ");
-			acc.setValue(sc.nextDouble());
+			double initialDeposit = sc.nextDouble();
+			account = new Account(accNumber, holder, initialDeposit);
+		} else {
+			account = new Account(accNumber, holder);
 		}
 		
 		System.out.println("");
-		System.out.println(acc.toString());
+		System.out.println(account.toString());
 		System.out.println("");
 		
 		System.out.print("Enter a deposit value: ");
-		acc.newDeposit(sc.nextDouble());
-		System.out.println("Updated " + acc.toString());
+		account.newDeposit(sc.nextDouble());
+		System.out.println("Updated " + account.toString());
 		System.out.println("");
 		
 		System.out.print("Enter a withdraw value: ");
-		acc.newWithdraw(sc.nextDouble());
-		System.out.println("Updated " + acc.toString());
+		account.newWithdraw(sc.nextDouble());
+		System.out.println("Updated " + account.toString());
 		
 		
 		sc.close();

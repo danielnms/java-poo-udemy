@@ -5,22 +5,20 @@ public class Account {
 	private int accountNumber;
 	private String holder;
 	private double value;
-	
-	public Account() {
-	}
 
-	public Account(int accountNumber, String holder, double value) {
+	public Account(int accountNumber, String holder) {
 		this.accountNumber = accountNumber;
 		this.holder = holder;
-		this.value = value;
+	}
+	
+	public Account(int accountNumber, String holder, double initialDeposit) {
+		this.accountNumber = accountNumber;
+		this.holder = holder;
+		newDeposit(initialDeposit);
 	}
 
 	public int getAccountNumber() {
 		return accountNumber;
-	}
-
-	public void setAccountNumber(int accountNumber) {
-		this.accountNumber = accountNumber;
 	}
 
 	public String getHolder() {
@@ -34,17 +32,13 @@ public class Account {
 	public double getValue() {
 		return value;
 	}
-
-	public void setValue(double value) {
-		this.value = value;
-	}
 	
 	public void newDeposit(double value) {
 		this.value += value;
 	}
 	
 	public void newWithdraw(double value) {
-		this.value -= value;
+		this.value -= value + 5.0;
 	}
 	
 	public String toString() {
